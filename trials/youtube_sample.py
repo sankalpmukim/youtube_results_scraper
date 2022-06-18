@@ -5,10 +5,11 @@
 # https://developers.google.com/explorer-help/code-samples#python
 
 import os
-
-import google_auth_oauthlib.flow
+from dotenv import load_dotenv
 import googleapiclient.discovery
 import googleapiclient.errors
+
+load_dotenv()
 
 scopes = ["https://www.googleapis.com/auth/youtube.force-ssl"]
 
@@ -20,18 +21,13 @@ def main():
 
     api_service_name = "youtube"
     api_version = "v3"
-    client_secrets_file = "YOUR_CLIENT_SECRET_FILE.json"
 
-    # Get credentials and create an API client
-    flow = google_auth_oauthlib.flow.InstalledAppFlow.from_client_secrets_file(
-        client_secrets_file, scopes)
-    credentials = flow.run_console()
     youtube = googleapiclient.discovery.build(
-        api_service_name, api_version, credentials=credentials)
+        api_service_name, api_version, developerKey=os.getenv("YOUTUBE_API_KEY"), )
 
     request = youtube.search().list(
         part="snippet",
-        maxResults=25,
+        maxResults=1,
         q="surfing"
     )
     response = request.execute()
