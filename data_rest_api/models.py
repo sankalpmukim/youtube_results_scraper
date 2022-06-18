@@ -10,7 +10,6 @@ class Video(models.Model):
     url = models.URLField()
     published_at = models.DateTimeField()
     thumbnail = models.URLField()
-    duration = models.IntegerField()
 
     def __str__(self) -> str:
         return self.title

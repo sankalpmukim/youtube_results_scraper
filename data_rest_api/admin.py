@@ -4,7 +4,7 @@ from .models import Video
 
 class VideoAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'description', 'url',
-                    'published_at', 'thumbnail', 'duration')
+                    'published_at', 'thumbnail',)
 
 # Register your models here.
 
