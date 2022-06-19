@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from data_rest_api import views
+from data_rest_api import views as views_rest_api
+from data_aggregator import views as views_aggregator
 
 router = routers.DefaultRouter()
-router.register(r'videos', views.VideoView, 'video')
+router.register(r'videos', views_rest_api.VideoView, 'video')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('loop/', include('data_aggregator.urls')),
 ]
