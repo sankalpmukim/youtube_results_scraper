@@ -11,7 +11,7 @@ def activate(request):
     if inter != None:
         return JsonResponse({"status": "already activated"})
     else:
-        inter = setInterval(1, execute)
+        inter = setInterval(10, execute)
         return JsonResponse({"status": "activated"})
 
 

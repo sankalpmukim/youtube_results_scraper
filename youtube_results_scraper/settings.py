@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'data_rest_api',
+    'data_aggregator',
 ]
 
 MIDDLEWARE = [

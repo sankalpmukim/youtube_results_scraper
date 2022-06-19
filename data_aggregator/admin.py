@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import ApiKey, Health
 
-# Register your models here.
+
+admin.site.register(ApiKey)
+admin.site.register(Health)
