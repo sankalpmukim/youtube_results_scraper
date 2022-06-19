@@ -9,6 +9,7 @@ class Video(models.Model):
     description = models.TextField()
     published_at = models.DateTimeField()
     thumbnail = models.URLField()
+    next_token = models.CharField(max_length=10, default="")
 
     def __str__(self) -> str:
         return self.title
