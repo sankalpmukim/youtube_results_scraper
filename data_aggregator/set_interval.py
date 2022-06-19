@@ -87,6 +87,7 @@ def execute_request(next_token, key=None):
     base_url = f"https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults={max_results}&q={query}&key={key}&order=date&type=video"
     if next_token != None:
         url = f"{base_url}&pageToken={next_token}"
+        print("next token found", next_token)
     else:
         url = base_url
         print("url", url)
