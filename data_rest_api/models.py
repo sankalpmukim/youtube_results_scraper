@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Video(models.Model):
-    id = models.CharField(max_length=100, primary_key=True)
+    id = models.CharField(max_length=15, primary_key=True)
     title = models.CharField(max_length=100)
     description = models.TextField()
     published_at = models.DateTimeField()
