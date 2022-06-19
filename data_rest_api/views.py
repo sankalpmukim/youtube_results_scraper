@@ -8,6 +8,6 @@ from .models import Video
 
 class VideoView(viewsets.ModelViewSet):
     serializer_class = VideoSerializer
-    queryset = Video.objects.all().order_by('-published_at')  # latest first
+    queryset = Video.objects.all().order_by('published_at')  # oldest first
     filter_backends = (filters.SearchFilter,)
     search_fields = ('title', 'description',)
